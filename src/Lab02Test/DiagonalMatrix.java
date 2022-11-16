@@ -16,6 +16,7 @@ public class DiagonalMatrix implements Matrix {
         transpose = false;
     }
 
+
     //   Initializes an MAX_SIZE * MAX_SIZE diagonal matrix
     DiagonalMatrix() {
         array = new double[MAX_SIZE * 2 - 1];
