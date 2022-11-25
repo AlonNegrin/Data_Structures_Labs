@@ -257,8 +257,15 @@ public abstract class ListTest<T> {
 
 	@Test
 	public void testHasNextAndPrev() {
-		//TODO Add tests for HasNext and HasPrev methods.
-	}
+		dList.clear();
+		assertFalse(dList.hasNext());
+		dList.insert(newInstance1);
+		dList.insert(newInstance3);
+		dList.goToBeginning();
+		assertTrue(dList.hasNext());
+		dList.insert(newInstance2);
+		assertTrue(dList.hasPrev());
+			}
 
 
 }
