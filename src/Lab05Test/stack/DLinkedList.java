@@ -1,4 +1,4 @@
-package Lab04Test;
+package Lab05Test.stack;
 
 public class DLinkedList<T> implements List<T> {
 
@@ -31,16 +31,19 @@ public class DLinkedList<T> implements List<T> {
 
     @Override
     public T remove() {
-        if(isEmpty()){return null;}
+        if (isEmpty()) {
+            return null;
+        }
         T element = cursor.getElement();
         (cursor.getPrev()).setNext(cursor.getNext());
         (cursor.getNext()).setPrev(cursor.getPrev());
-        if(cursor.getNext()==tail){
-            if(isEmpty()){cursor=head;}
+        if (cursor.getNext() == tail) {
+            if (isEmpty()) {
+                cursor = head;
+            }
             goToBeginning();
-        }
-        else{
-            cursor=cursor.getNext();
+        } else {
+            cursor = cursor.getNext();
         }
         return element;
 
@@ -127,10 +130,7 @@ public class DLinkedList<T> implements List<T> {
         return !isEmpty() && cursor.prev != head;
     }
 
-    @Override
-    public String toString() {
-        return "";
-    }
+
 
     private class DNode {
         private T element;
